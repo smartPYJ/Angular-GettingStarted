@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
+
 import {Iproduct} from './product'
+import { Component, OnInit } from "@angular/core";
 
 @Component({
 
@@ -9,7 +10,7 @@ import {Iproduct} from './product'
 
 
 })
-export class productListComponent {
+export class productListComponent implements OnInit {
 
   pageTitle: string = 'Product Title ';
   imageWidth: number = 50;
@@ -17,7 +18,7 @@ export class productListComponent {
   showImage: boolean = false;
   listFilter: string = 'Cart';
 
-  products: Iproduct[] = [
+  products: Iproduct[]  = [
     {
       "productId": 1,
       "productName": "Leaf Rake",
@@ -72,5 +73,9 @@ export class productListComponent {
   toggleImage(): void {
     this.showImage = !this.showImage;
 
+  }
+
+  ngOnInit (){
+console.log(' no return value yet ')
   }
 }
